@@ -1,0 +1,13 @@
+{
+  "appId": "com.dgme.app",
+  "appName": "AI 工具",
+  "webDir": "dist",
+  "server": {
+    "cleartext": true, 
+    "androidScheme": "http"
+  },
+  "android": {
+    "allowMixedContent": true
+  }
+
+}
