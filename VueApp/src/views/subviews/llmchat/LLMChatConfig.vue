@@ -155,6 +155,7 @@ const handleChange = (value: string[]) => {
     text-align: left;
     overflow-y: hidden;
     overflow-x: hidden;
+    font-size: small;
   }
   .custom-card {
     backdrop-filter: blur(10px);

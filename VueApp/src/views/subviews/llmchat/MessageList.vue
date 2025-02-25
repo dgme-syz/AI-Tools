@@ -212,6 +212,7 @@ const handleTouchStart = (event) => {
   white-space: normal;
   word-wrap: break-word;
   word-break: break-word;
+  width: 100%;
 }
 
 .message-time {

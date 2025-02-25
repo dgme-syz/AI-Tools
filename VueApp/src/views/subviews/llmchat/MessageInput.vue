@@ -1,26 +1,27 @@
 <template>
-    <div class="message-input-x">
+    <div class="message-input-x" >
       <el-switch
         v-model="localModel"
         class="ml-2"
         inline-prompt
-        style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949"
+        style="--el-switch-on-color: #13ce66; --el-switch-off-color: #ff4949;margin-top: auto;margin-bottom: 1%;"
         active-text="本地"
         inactive-text="远程"
       />
       <el-input
         v-model="newMessage"
         ref="textareaRef"
-        autosize
+        :autosize="{ minRows: 1, maxRows: 10 }"
         type="textarea"
         placeholder="请输入 ..."
         @keyup.enter="handleKeyUpEnter"
+        
       />
-      <div>
+      <div style="margin-top: auto;margin-bottom: 1%;">
         <el-row>
           <button @click="drawer = true"><el-icon><Menu /></el-icon></button>
         </el-row>
-        <el-row style="margin-top: 10%;">
+        <el-row style="margin-top: 10%;margin-bottom: 15%;">
           <button @click="sendMessage"><el-icon><Promotion /></el-icon></button>
         </el-row>
       </div>
@@ -45,7 +46,7 @@
             'no-active': chat_id !== index, 
           }"
         >
-          <template #header>
+          <!-- <template #header> -->
             <div class="card-header">
               <span style="color: var(--text-color)">☘︎ 对话 {{ index }} </span>
               <el-button 
@@ -56,13 +57,13 @@
                 <el-icon><Close /></el-icon>
               </el-button>
             </div>
-          </template>
-          <img 
+          <!-- </template> -->
+          <!-- <img 
             :src="'https://www.dmoe.cc/random.php?rand=' + randnum + index"
             alt="wallpaper"
             class="scaled-image" 
             @click="chat_id=index; drawer = false"
-          />
+          /> -->
         </el-card>
       </div>
       <div style="align-items: center;display: flex;justify-content: center;margin-top: 2%;">
@@ -273,7 +274,7 @@ function handleKeyUpEnter(event: KeyboardEvent) {
 
 html[data-theme="light"] {
   .active {
-    background-color: #fdcbf1;
+    background-color: #f8f3d4;
   }
 
   .no-active {
@@ -283,7 +284,7 @@ html[data-theme="light"] {
 
 html[data-theme="dark"] {
   .active {
-    background-color: rgba(162, 148, 249, 0.8);
+    background-color: #522546;
   }
 
   .no-active {

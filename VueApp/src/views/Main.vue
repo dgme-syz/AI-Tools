@@ -155,7 +155,7 @@ const url = ref<string>('https://www.loliapi.com/acg/pc/');
 .aside_bar {
     width: 15%;
     text-align: center;
-    background-image: url("/src/assets/logo.png");
+    /* background-image: url("/src/assets/logo.png"); */
     background-size: contain; 
     background-position: center; /* 居中显示图片 */
     background-repeat: no-repeat;

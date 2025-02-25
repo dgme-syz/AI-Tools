@@ -172,6 +172,7 @@ const handleUpload = (file: Object) => {
     text-align: left;
     overflow-y: hidden;
     overflow-x: hidden;
+    font-size: small;
   }
 }
 

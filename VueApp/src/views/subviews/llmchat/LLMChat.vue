@@ -116,12 +116,19 @@ async function sendMessage(mes: string) {
       currentAssistantMessage.content += "</blockquote>\n\n";
       sep = false
     }
-    currentAssistantMessage.content += response.choices[0]?.delta?.reasoning_content || "";
-    currentAssistantMessage.content += response.choices[0]?.delta?.content || "";
+
+    // 获取新的内容
+    const reasoningContent = response?.choices[0]?.delta?.reasoning_content || "";
+    const content = response?.choices[0]?.delta?.content || "";
+
+    // 更新内容
+    currentAssistantMessage.content += reasoningContent + content;
+
     // 强制 Vue 渲染更新
     await nextTick();
     scrollToBottom();
   }
+  await nextTick();
 }
 </script>
 
@@ -143,6 +150,7 @@ async function sendMessage(mes: string) {
 }
 
 .message-input {
+    background-color: var(--bg-color);
     display: flex;
     width: 100%;
     min-height: 5%;
@@ -159,7 +167,6 @@ async function sendMessage(mes: string) {
 @media (max-width: 768px) {
   .message-input {
     min-height: 5%;
-    margin-bottom: 2%;
   }
   .chat-window {
     box-shadow: none;

@@ -1,4 +1,5 @@
 .message-content {
+
   :root {
 
       /********************************* Text alignment 文本对齐方式 *************************************
@@ -345,6 +346,7 @@
       background-color: #e8f4eb;
       border-radius: 7px;
       transition: box-shadow 0.3s ease, border-radius 0.3s ease, border-left 0.3s ease;
+      margin: 0;
   }
 
   blockquote p {
@@ -944,7 +946,7 @@
   }
 
   /* code */
-  h1 code,
+  /* h1 code,
   h2 code,
   h3 code,
   h4 code,
@@ -970,7 +972,7 @@
       background-color: rgba(221, 235, 213, calc(0.5 + 0.5 * var(--code-hover-effect) * var(--use-dynamic-effect)));
       font-weight: calc(550 + 150 * var(--code-hover-effect) * var(--use-dynamic-effect));
       padding: 3px 3px calc(1px + 2px * var(--code-hover-effect) * var(--use-dynamic-effect));
-  }
+  } */
 
   /* strike */
   del {
